@@ -4,7 +4,10 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<!-- Hero Section -->
-	<section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-burkindi-beige to-burkindi-muted-blue bg-opacity-80" data-aos="fade-in">
+	<section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-burkindi-beige to-burkindi-muted-blue bg-opacity-80 relative" data-aos="fade-in">
+		<div class="absolute top-8 left-8">
+			<img src="/burkindi logo.webp" alt="BURKINDI Logo" class="w-24 h-24 md:w-32 md:h-32" data-aos="fade-in" data-aos-delay="100">
+		</div>
 		<div class="text-center px-4 transition-all duration-500 hover:scale-105">
 			<h1 class="text-5xl md:text-7xl font-bold mb-4 text-burkindi-taupe" data-aos="zoom-in" data-aos-delay="200">Organización BURKINDI</h1>
 			<h2 class="text-2xl md:text-4xl mb-6 text-burkindi-muted-green" data-aos="fade-up" data-aos-delay="400">Educación que libera.</h2>
@@ -16,29 +19,40 @@ import Layout from '../layouts/Layout.astro';
 			</blockquote>
 			<a href="#colaborar" class="bg-burkindi-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-burkindi-yellow transition-colors duration-300 transform hover:scale-110" data-aos="pulse" data-aos-delay="1000">Quiero colaborar</a>
 		</div>
+		<div class="absolute bottom-8 right-8">
+			<img src="/niños burkineses.webp" alt="Niños en Burkina Faso" class="w-48 h-32 md:w-64 md:h-48 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="1200">
+		</div>
 	</section>
 
 	<!-- ¿Quiénes somos? Section -->
 	<section id="quienes-somos" class="py-20 px-4 bg-white bg-opacity-90" data-aos="fade-up">
-		<div class="max-w-4xl mx-auto text-center">
-			<h2 class="text-4xl font-bold mb-8 text-burkindi-taupe" data-aos="fade-down">El valor de ser íntegros</h2>
-			<p class="text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
-				BURKINDI es una palabra en idioma moore que define la virtud de ser irreprochable e íntegro. Alguien que no miente, no roba y hace siempre lo correcto. En nuestra organización, trabajamos para despertar esa esencia en cada uno de nosotros y construir un mundo más equitativo.
-			</p>
-			<p class="text-lg" data-aos="fade-up" data-aos-delay="400">
-				Actualmente, concentramos nuestros esfuerzos en la comuna rural de Saaba, apoyando a la escuela "La Bonne Semence". No solo trabajamos con la infancia; también impulsamos el desarrollo socioeconómico de las mujeres de la comunidad bajo una clave de autogestión y dignidad.
-			</p>
+		<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+			<div class="md:w-1/2 text-center md:text-left">
+				<h2 class="text-4xl font-bold mb-8 text-burkindi-taupe" data-aos="fade-down">El valor de ser íntegros</h2>
+				<p class="text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
+					BURKINDI es una palabra en idioma moore que define la virtud de ser irreprochable e íntegro. Alguien que no miente, no roba y hace siempre lo correcto. En nuestra organización, trabajamos para despertar esa esencia en cada uno de nosotros y construir un mundo más equitativo.
+				</p>
+				<p class="text-lg" data-aos="fade-up" data-aos-delay="400">
+					Actualmente, concentramos nuestros esfuerzos en la comuna rural de Saaba, apoyando a la escuela "La Bonne Semence". No solo trabajamos con la infancia; también impulsamos el desarrollo socioeconómico de las mujeres de la comunidad bajo una clave de autogestión y dignidad.
+				</p>
+			</div>
+			<div class="md:w-1/2 mt-8 md:mt-0">
+				<img src="/equipo en burkina faso.webp" alt="Equipo en Burkina Faso" class="w-full h-64 object-cover rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="600">
+			</div>
 		</div>
 	</section>
 
 	<!-- Padrinos Internacionales Section -->
 	<section id="padrinos" class="py-20 px-4 bg-burkindi-muted-blue bg-opacity-20" data-aos="fade-up">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-4xl font-bold mb-8 text-center text-burkindi-taupe" data-aos="fade-down">Sé parte del cambio: Padrinos Internacionales</h2>
-			<p class="text-lg mb-8 text-center" data-aos="fade-up" data-aos-delay="200">
-				Desde octubre de 2020, facilitamos el acceso a la educación básica en Saaba. Ser padrino o madrina es un compromiso directo y transparente que transforma una vida de forma inmediata.
-			</p>
-			<div class="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="400">
+		<div class="max-w-6xl mx-auto">
+			<div class="text-center mb-8">
+				<img src="/logo padrino internacional.webp" alt="Logo Padrino Internacional" class="w-32 h-32 mx-auto mb-4" data-aos="zoom-in">
+				<h2 class="text-4xl font-bold mb-8 text-burkindi-taupe" data-aos="fade-down">Sé parte del cambio: Padrinos Internacionales</h2>
+				<p class="text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
+					Desde octubre de 2020, facilitamos el acceso a la educación básica en Saaba. Ser padrino o madrina es un compromiso directo y transparente que transforma una vida de forma inmediata.
+				</p>
+			</div>
+			<div class="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg mb-8" data-aos="zoom-in" data-aos-delay="400">
 				<h3 class="text-2xl font-semibold mb-4">Preguntas Frecuentes</h3>
 				<div class="space-y-4">
 					<div data-aos="fade-right" data-aos-delay="500">
@@ -55,6 +69,10 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 			</div>
+			<div class="grid md:grid-cols-2 gap-8">
+				<img src="/equip - video llamada padrino.webp" alt="Video llamada con padrino" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="flip-left" data-aos-delay="900">
+				<img src="/equipo - video llamada.webp" alt="Equipo en video llamada" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="flip-right" data-aos-delay="1000">
+			</div>
 		</div>
 	</section>
 
@@ -67,30 +85,37 @@ import Layout from '../layouts/Layout.astro';
 			</p>
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 				<div class="bg-burkindi-beige p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105" data-aos="flip-left" data-aos-delay="300">
+					<img src="/Escuela.webp" alt="Luz Solidaria" class="w-full h-32 object-cover rounded mb-4">
 					<h3 class="text-xl font-semibold mb-4">Luz Solidaria</h3>
 					<p>Instalación de paneles solares para que la aldea tenga luz, permitiendo el estudio y la seguridad nocturna.</p>
 				</div>
 				<div class="bg-burkindi-beige p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105" data-aos="flip-right" data-aos-delay="400">
+					<img src="/escuela para adultos.webp" alt="Alfabetización de Adultos" class="w-full h-32 object-cover rounded mb-4">
 					<h3 class="text-xl font-semibold mb-4">Alfabetización de Adultos</h3>
 					<p>Clases nocturnas para combatir la pobreza social y la discriminación.</p>
 				</div>
 				<div class="bg-burkindi-beige p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105" data-aos="flip-left" data-aos-delay="500">
+					<img src="/niños en la escuela.webp.webp" alt="Informática y Lenguas" class="w-full h-32 object-cover rounded mb-4">
 					<h3 class="text-xl font-semibold mb-4">Informática y Lenguas</h3>
 					<p>Introducción al mundo digital, inglés y español para ampliar las oportunidades de los jóvenes.</p>
 				</div>
 				<div class="bg-burkindi-beige p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105" data-aos="flip-right" data-aos-delay="600">
+					<img src="/ausencia de agua potable.webp" alt="Gota de Esperanza" class="w-full h-32 object-cover rounded mb-4">
 					<h3 class="text-xl font-semibold mb-4">Gota de Esperanza (Pozo de Agua)</h3>
 					<p>En un país donde mueren miles de niños por falta de agua potable, construir un pozo es salvar vidas.</p>
 				</div>
 				<div class="bg-burkindi-beige p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105" data-aos="flip-left" data-aos-delay="700">
+					<img src="/comida.webp" alt="Una Huerta contra el Hambre" class="w-full h-32 object-cover rounded mb-4">
 					<h3 class="text-xl font-semibold mb-4">Una Huerta contra el Hambre</h3>
 					<p>Talleres de huertas orgánicas para combatir la inseguridad alimentaria que afecta a millones en el país.</p>
 				</div>
 				<div class="bg-burkindi-beige p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105" data-aos="flip-right" data-aos-delay="800">
+					<img src="/familia.webp" alt="Empoderamiento Femenino" class="w-full h-32 object-cover rounded mb-4">
 					<h3 class="text-xl font-semibold mb-4">Empoderamiento Femenino</h3>
 					<p>Apoyo a la fabricación de telas tradicionales "Faso Dan Faso" con telares propios, fomentando la autonomía de la mujer.</p>
 				</div>
 				<div class="bg-burkindi-beige p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105" data-aos="flip-left" data-aos-delay="900">
+					<img src="/en bici.webp" alt="Conciencia Ambiental" class="w-full h-32 object-cover rounded mb-4">
 					<h3 class="text-xl font-semibold mb-4">Conciencia Ambiental</h3>
 					<p>Talleres de economía circular y plantación de árboles para cuidar nuestro entorno.</p>
 				</div>
@@ -100,19 +125,26 @@ import Layout from '../layouts/Layout.astro';
 
 	<!-- El Contexto Section -->
 	<section id="contexto" class="py-20 px-4 bg-burkindi-muted-green bg-opacity-20" data-aos="fade-up">
-		<div class="max-w-4xl mx-auto text-center">
-			<h2 class="text-4xl font-bold mb-8 text-burkindi-taupe" data-aos="fade-down">Una realidad que nos convoca</h2>
-			<p class="text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
-				Burkina Faso, en el corazón del Sahel, es uno de los países con mayores desafíos en el mundo:
-			</p>
-			<ul class="text-left list-disc list-inside space-y-2 mb-8" data-aos="fade-up" data-aos-delay="400">
-				<li><strong>Educación en crisis:</strong> Solo el 41% de la población está alfabetizada y más de 2.500 escuelas han cerrado debido al conflicto armado.</li>
-				<li><strong>Desplazamiento:</strong> Más de un millón de personas han tenido que abandonar sus hogares.</li>
-				<li><strong>Brecha de Género:</strong> El 52% de las mujeres se casan antes de los 18 años.</li>
-			</ul>
-			<p class="text-lg" data-aos="fade-up" data-aos-delay="600">
-				Nuestra ayuda llega a la escuela "La Bonne Semence" en Saaba, donde recibimos a niños de familias desplazadas, huérfanos y comunidades en extrema precariedad que hoy ven en BURKINDI una oportunidad de esperanza.
-			</p>
+		<div class="max-w-6xl mx-auto">
+			<div class="text-center mb-12">
+				<h2 class="text-4xl font-bold mb-8 text-burkindi-taupe" data-aos="fade-down">Una realidad que nos convoca</h2>
+				<p class="text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
+					Burkina Faso, en el corazón del Sahel, es uno de los países con mayores desafíos en el mundo:
+				</p>
+				<ul class="text-left list-disc list-inside space-y-2 mb-8" data-aos="fade-up" data-aos-delay="400">
+					<li><strong>Educación en crisis:</strong> Solo el 41% de la población está alfabetizada y más de 2.500 escuelas han cerrado debido al conflicto armado.</li>
+					<li><strong>Desplazamiento:</strong> Más de un millón de personas han tenido que abandonar sus hogares.</li>
+					<li><strong>Brecha de Género:</strong> El 52% de las mujeres se casan antes de los 18 años.</li>
+				</ul>
+				<p class="text-lg" data-aos="fade-up" data-aos-delay="600">
+					Nuestra ayuda llega a la escuela "La Bonne Semence" en Saaba, donde recibimos a niños de familias desplazadas, huérfanos y comunidades en extrema precariedad que hoy ven en BURKINDI una oportunidad de esperanza.
+				</p>
+			</div>
+			<div class="grid md:grid-cols-3 gap-8">
+				<img src="/hermanos.webp" alt="Hermanos en Burkina Faso" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="700">
+				<img src="/en la escuela.webp" alt="Niños en la escuela" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="800">
+				<img src="/ausencia de agua potable 2.webp" alt="Ausencia de agua potable" class="w-full h-48 object-cover rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="900">
+			</div>
 		</div>
 	</section>
 
@@ -143,8 +175,12 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			<!-- Carrusel de fotos placeholder -->
 			<div class="bg-gray-200 p-8 rounded-lg mb-12" data-aos="fade-in" data-aos-delay="700">
-				<p class="text-lg">Carrusel de fotos: Artículos para la venta colaborativa</p>
-				<!-- Aquí irían las imágenes -->
+				<h3 class="text-2xl font-semibold mb-4">Carrusel de fotos: Artículos para la venta colaborativa</h3>
+				<div class="grid md:grid-cols-3 gap-4">
+					<img src="/equipo - feria montevideo.webp" alt="Equipo en feria Montevideo" class="w-full h-32 object-cover rounded">
+					<img src="/niños burkineses2.webp" alt="Niños burkineses" class="w-full h-32 object-cover rounded">
+					<img src="/niños burkineses3.webp" alt="Niños burkineses" class="w-full h-32 object-cover rounded">
+				</div>
 			</div>
 			<!-- Contact Form -->
 			<div class="bg-burkindi-beige p-8 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="800">
@@ -171,6 +207,7 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Footer -->
 	<footer class="py-12 px-4 bg-burkindi-taupe text-white" data-aos="fade-up">
 		<div class="max-w-4xl mx-auto text-center">
+			<img src="/burkindi logo.webp" alt="BURKINDI Logo" class="w-16 h-16 mx-auto mb-4" data-aos="zoom-in">
 			<blockquote class="text-lg italic mb-8" data-aos="fade-down">
 				"Mucha gente pequeña, en lugares pequeños, haciendo cosas pequeñas, puede cambiar el mundo." — Eduardo Galeano.
 			</blockquote>
