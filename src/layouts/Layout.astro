@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Organización BURKINDI</title>
+		<meta name="description" content="Educación que libera. ONG dedicada a promover el acceso a la educación en Burkina Faso." />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	</head>
+	<body class="bg-burkindi-beige text-burkindi-taupe font-sans">
+		<slot />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init({
+				duration: 800,
+				easing: 'ease-in-out',
+				once: true,
+			});
+		</script>
+		<script type="module">
+			import { Client, Databases } from 'https://cdn.jsdelivr.net/npm/appwrite@14.0.0/+esm';
+
+			const client = new Client();
+			client
+				.setEndpoint(import.meta.env.APPWRITE_ENDPOINT)
+				.setProject(import.meta.env.APPWRITE_PROJECT_ID);
+
+			const databases = new Databases(client);
+
+			document.getElementById('contact-form').addEventListener('submit', async (e) => {
+				e.preventDefault();
+				const formData = new FormData(e.target);
+				const data = {
+					name: formData.get('name'),
+					email: formData.get('email'),
+					message: formData.get('message'),
+				};
+
+				try {
+					await databases.createDocument(
+						import.meta.env.APPWRITE_DATABASE_ID,
+						import.meta.env.APPWRITE_COLLECTION_ID,
+						'unique()', // Auto-generate ID
+						data
+					);
+					alert('Mensaje enviado exitosamente!');
+					e.target.reset();
+				} catch (error) {
+					console.error(error);
+					alert('Error al enviar el mensaje. Inténtalo de nuevo.');
+				}
+			});
+		</script>
+	</body>
+</html>
