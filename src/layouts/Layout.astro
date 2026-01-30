@@ -13,33 +13,29 @@ import "../styles/global.css";
 			name="description"
 			content="Somos una ONG dedicada a transformar vidas en Burkina Faso a través de la educación. Apadrina un niño, apoya nuestros proyectos y únete al cambio."
 		/>
-		<meta 
-			name="keywords" 
-			content="ONG, Burkina Faso, educación, apadrinar, desarrollo, ayuda humanitaria, proyectos sociales, África" 
+		<meta
+			name="keywords"
+			content="ONG, Burkina Faso, educación, apadrinar, desarrollo, ayuda humanitaria, proyectos sociales, África"
 		/>
 		<script type="application/ld+json">
 			{
-			  "@context": "https://schema.org",
-			  "@type": "NGO",
-			  "name": "Burkindi ONG",
-			  "url": "https://burkindi.org",
-			  "logo": "https://burkindi.org/burkindi.png",
-			  "description": "Somos una ONG dedicada a transformar vidas en Burkina Faso a través de la educación. Apadrina un niño, apoya nuestros proyectos y únete al cambio.",
-			  "address": {
-				"@type": "PostalAddress",
-				"addressCountry": "UY"
-			  },
-			  "contactPoint": {
-				"@type": "ContactPoint",
-				"telephone": "+598-99-986-123",
-				"contactType": "Customer Service"
-			  }
+				"@context": "https://schema.org",
+				"@type": "NGO",
+				"name": "Burkindi ONG",
+				"url": "https://burkindi.org",
+				"logo": "https://burkindi.org/burkindi.png",
+				"description": "Somos una ONG dedicada a transformar vidas en Burkina Faso a través de la educación. Apadrina un niño, apoya nuestros proyectos y únete al cambio.",
+				"address": {
+					"@type": "PostalAddress",
+					"addressCountry": "UY"
+				},
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+598-99-986-123",
+					"contactType": "Customer Service"
+				}
 			}
 		</script>
-		<link
-			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-			rel="stylesheet"
-		/>
 	</head>
 	<body
 		class="bg-burkindi-beige text-burkindi-taupe font-sans relative overflow-x-hidden selection:bg-burkindi-red selection:text-white"
@@ -61,13 +57,14 @@ import "../styles/global.css";
 		</div>
 
 		<slot />
-		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"
-		></script>
-		<script is:inline>
+		<script>
+			import AOS from "aos";
+			import "aos/dist/aos.css";
+
 			AOS.init({
 				duration: 800,
-				easing: "ease-in-out",
 				once: true,
+				offset: 50,
 			});
 		</script>
 	</body>

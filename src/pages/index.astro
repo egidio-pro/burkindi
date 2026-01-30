@@ -11,7 +11,6 @@ import Header from "../components/Header.astro";
     <section
       id="hero"
       class="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden"
-      data-aos="fade-in"
     >
       <div
         class="max-w-7xl mx-auto px-4 w-full flex flex-col md:flex-row items-center gap-16"
@@ -19,17 +18,16 @@ import Header from "../components/Header.astro";
         <!-- Contenido Texto -->
         <div
           class="md:w-1/2 text-left space-y-8 z-10 flex flex-col items-start"
+          data-aos="fade-right"
         >
           <div
-            class="inline-block bg-white/50 backdrop-blur-sm border border-burkindi-taupe/10 px-4 py-1 rounded-full text-sm font-medium text-burkindi-taupe/80"
+            class="inline-block bg-white/90 md:bg-white/50 md:backdrop-blur-sm border border-burkindi-taupe/10 px-4 py-1 rounded-full text-sm font-medium text-burkindi-taupe/80 shadow-sm"
           >
             ONG Educativa en Burkina Faso
           </div>
 
           <h1
             class="text-5xl md:text-7xl font-bold text-burkindi-taupe leading-tight tracking-tight"
-            data-aos="fade-up"
-            data-aos-delay="100"
           >
             Educación que <span class="relative whitespace-nowrap"
               ><span class="relative z-10 text-burkindi-red">libera</span><svg
@@ -47,27 +45,21 @@ import Header from "../components/Header.astro";
 
           <p
             class="text-lg md:text-xl text-burkindi-taupe/80 leading-relaxed max-w-xl"
-            data-aos="fade-up"
-            data-aos-delay="200"
           >
             Trabajamos para que niños y niñas vulnerables accedan a su derecho
             fundamental: aprender, crecer y ser autónomos.
           </p>
 
-          <div
-            class="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
+          <div class="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
             <a
               href="#colaborar"
-              class="inline-flex items-center justify-center bg-burkindi-red text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-burkindi-red-dark transition-all shadow-lg hover:shadow-burkindi-red/30 transform hover:-translate-y-1.5"
+              class="inline-flex items-center justify-center bg-burkindi-red text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-burkindi-red-dark transition-all shadow-lg hover:shadow-burkindi-red/30 transform hover:-translate-y-1 active:scale-95 duration-200"
             >
               Quiero colaborar
             </a>
             <a
               href="#proyectos"
-              class="inline-flex items-center justify-center bg-white/80 backdrop-blur-sm border-2 border-burkindi-taupe/20 text-burkindi-taupe px-8 py-4 rounded-full text-lg font-semibold hover:border-burkindi-taupe hover:bg-white transition-all transform hover:-translate-y-1.5"
+              class="inline-flex items-center justify-center bg-white/90 md:bg-white/80 md:backdrop-blur-sm border-2 border-burkindi-taupe/20 text-burkindi-taupe px-8 py-4 rounded-full text-lg font-semibold hover:border-burkindi-taupe hover:bg-white transition-all transform hover:-translate-y-1 active:scale-95 duration-200"
             >
               Nuestros Proyectos
             </a>
@@ -76,8 +68,6 @@ import Header from "../components/Header.astro";
           <!-- Stats mini -->
           <div
             class="grid grid-cols-3 gap-8 pt-8 border-t border-burkindi-taupe/10 w-full max-w-md"
-            data-aos="fade-in"
-            data-aos-delay="500"
           >
             <div>
               <span class="block text-3xl font-bold text-burkindi-taupe"
@@ -102,35 +92,36 @@ import Header from "../components/Header.astro";
         <!-- Imagen Hero (Composición) -->
         <div
           class="md:w-1/2 relative z-0 w-full"
-          data-aos="zoom-in"
-          data-aos-delay="400"
+          data-aos="fade-left"
+          data-aos-delay="200"
         >
           <div
             class="relative w-full aspect-[4/5] md:aspect-square max-w-[600px] mx-auto"
           >
             <!-- Decorative blobs behind image -->
             <div
-              class="absolute -top-10 -right-10 w-64 h-64 bg-burkindi-yellow/20 rounded-full blur-3xl animate-pulse"
+              class="absolute -top-10 -right-10 w-64 h-64 bg-burkindi-yellow/20 rounded-full blur-3xl animate-pulse will-change-transform"
             >
             </div>
             <div
-              class="absolute -bottom-10 -left-10 w-64 h-64 bg-burkindi-muted-blue/20 rounded-full blur-3xl animate-pulse delay-700"
+              class="absolute -bottom-10 -left-10 w-64 h-64 bg-burkindi-muted-blue/20 rounded-full blur-3xl animate-pulse delay-700 will-change-transform"
             >
             </div>
 
             <!-- Main Image -->
             <div
-              class="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-700 group"
+              class="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white transform rotate-2 md:hover:rotate-0 transition-transform duration-700 group will-change-transform"
             >
               <img
                 src="/ninos-burkineses.webp"
                 alt="Niños de Burkina Faso estudiando gracias a la ayuda de Burkindi ONG"
-                class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700"
+                class="w-full h-full object-cover transform scale-105 md:group-hover:scale-110 transition-transform duration-700 will-change-transform"
+                loading="eager"
               />
 
               <!-- Floating Card Over Image -->
               <div
-                class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-lg border border-white/50 flex items-center gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                class="absolute bottom-6 left-6 right-6 bg-white/95 md:backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-lg border border-white/50 flex items-center gap-4 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500"
               >
                 <div
                   class="w-12 h-12 bg-burkindi-muted-green/10 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
@@ -153,14 +144,11 @@ import Header from "../components/Header.astro";
     </section>
 
     <!-- ¿Quiénes somos? Section -->
-    <section
-      id="quienes-somos"
-      class="py-24 px-4 relative scroll-mt-24"
-      data-aos="fade-up"
-    >
+    <section id="quienes-somos" class="py-24 px-4 relative scroll-mt-24">
       <div class="max-w-6xl mx-auto">
         <div
-          class="bg-white/30 backdrop-blur-md border border-white/40 rounded-3xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-12"
+          class="bg-white/95 md:bg-white/30 md:backdrop-blur-md border border-white/40 rounded-3xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-12"
+          data-aos="fade-up"
         >
           <div class="md:w-1/2 text-center md:text-left space-y-6">
             <h2
@@ -185,13 +173,14 @@ import Header from "../components/Header.astro";
           </div>
           <div class="md:w-1/2 relative group">
             <div
-              class="absolute inset-0 bg-burkindi-yellow/20 rounded-2xl transform rotate-3 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-105"
+              class="absolute inset-0 bg-burkindi-yellow/20 rounded-2xl transform rotate-3 transition-transform duration-500 md:group-hover:rotate-12 md:group-hover:scale-105 will-change-transform"
             >
             </div>
             <img
               src="/equipo en burkina faso.webp"
               alt="Equipo de Burkindi ONG en Burkina Faso"
-              class="relative w-full h-80 object-cover rounded-2xl shadow-lg transform transition-transform duration-500 group-hover:-translate-y-3 group-hover:-translate-x-2 group-hover:shadow-2xl"
+              class="relative w-full h-80 object-cover rounded-2xl shadow-lg transform transition-transform duration-500 md:group-hover:-translate-y-3 md:group-hover:-translate-x-2 md:group-hover:shadow-2xl will-change-transform"
+              loading="lazy"
             />
           </div>
         </div>
@@ -199,9 +188,9 @@ import Header from "../components/Header.astro";
     </section>
 
     <!-- Padrinos Internacionales Section -->
-    <section id="padrinos" class="py-24 px-4 scroll-mt-24" data-aos="fade-up">
+    <section id="padrinos" class="py-24 px-4 scroll-mt-24">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16" data-aos="fade-up">
           <span
             class="text-burkindi-red font-semibold tracking-wider uppercase text-sm mb-2 block"
             >Únete a la familia</span
@@ -218,7 +207,7 @@ import Header from "../components/Header.astro";
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <!-- Tarjeta de Info -->
           <div
-            class="bg-white/40 backdrop-blur-lg border border-white/50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 space-y-8"
+            class="bg-white/95 md:bg-white/40 md:backdrop-blur-lg border border-white/50 p-8 rounded-3xl shadow-lg md:hover:shadow-2xl transition-all duration-300 md:hover:-translate-y-2 space-y-8"
           >
             <div class="flex items-start gap-4">
               <div
@@ -306,18 +295,22 @@ import Header from "../components/Header.astro";
           </div>
 
           <!-- Imágenes Grid (cleaner layout) -->
-          <div class="relative h-full min-h-[400px] flex items-center justify-center group">
+          <div
+            class="relative h-full min-h-[400px] flex items-center justify-center group"
+          >
             <!-- Image 1 (Back) -->
             <img
               src="/equip - video llamada padrino.webp"
               alt="Videollamada de un padrino con un niño de Burkina Faso"
-              class="relative w-4/5 h-auto object-cover rounded-2xl shadow-2xl border-4 border-white transform group-hover:scale-[1.03] transition-transform duration-500 z-10"
+              class="relative w-4/5 h-auto object-cover rounded-2xl shadow-2xl border-4 border-white transform md:group-hover:scale-[1.03] transition-transform duration-500 z-10 will-change-transform"
+              loading="lazy"
             />
             <!-- Image 2 (Front) -->
             <img
               src="/equipo - video llamada.webp"
               alt="Equipo de Burkindi ONG en una videollamada"
-              class="absolute bottom-0 -right-4 w-1/2 h-auto object-cover rounded-2xl shadow-xl border-4 border-white transform rotate-6 group-hover:rotate-3 group-hover:scale-105 transition-transform duration-500 z-20"
+              class="absolute bottom-0 -right-4 w-1/2 h-auto object-cover rounded-2xl shadow-xl border-4 border-white transform rotate-6 md:group-hover:rotate-3 md:group-hover:scale-105 transition-transform duration-500 z-20 will-change-transform"
+              loading="lazy"
             />
           </div>
         </div>
@@ -328,7 +321,6 @@ import Header from "../components/Header.astro";
     <section
       id="proyectos"
       class="py-24 px-4 relative overflow-hidden scroll-mt-24"
-      data-aos="fade-up"
     >
       <!-- Decorative background -->
       <div
@@ -380,16 +372,21 @@ import Header from "../components/Header.astro";
                 desc: "Economía circular y reforestación.",
               },
             ].map((project, index) => (
-              <div class="group bg-white/40 backdrop-blur-sm border border-white/50 rounded-2xl overflow-hidden hover:bg-white/60 transition-all duration-300 hover:-translate-y-2 shadow-sm hover:shadow-xl">
+              <div
+                class="group bg-white/95 md:bg-white/40 md:backdrop-blur-sm border border-white/50 rounded-2xl overflow-hidden md:hover:bg-white/60 transition-all duration-300 md:hover:-translate-y-2 shadow-sm md:hover:shadow-xl"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
                 <div class="h-48 overflow-hidden">
                   <img
                     src={project.img}
                     alt={`Proyecto ${project.title} de Burkindi ONG`}
-                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    class="w-full h-full object-cover transform md:group-hover:scale-110 transition-transform duration-500 will-change-transform"
+                    loading="lazy"
                   />
                 </div>
                 <div class="p-6">
-                  <h3 class="text-xl font-bold text-burkindi-taupe mb-2 group-hover:text-burkindi-red transition-colors">
+                  <h3 class="text-xl font-bold text-burkindi-taupe mb-2 md:group-hover:text-burkindi-red transition-colors">
                     {project.title}
                   </h3>
                   <p class="text-burkindi-taupe/80">{project.desc}</p>
@@ -402,7 +399,7 @@ import Header from "../components/Header.astro";
     </section>
 
     <!-- Contexto Section -->
-    <section id="contexto" class="py-24 px-4 scroll-mt-24" data-aos="fade-up">
+    <section id="contexto" class="py-24 px-4 scroll-mt-24">
       <div
         class="max-w-6xl mx-auto bg-burkindi-taupe/90 text-white rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-2xl"
       >
@@ -411,6 +408,7 @@ import Header from "../components/Header.astro";
           src="/ausencia de agua potable 2.webp"
           alt="Contexto de la crisis de agua en Burkina Faso"
           class="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay"
+          loading="lazy"
         />
 
         <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -442,11 +440,13 @@ import Header from "../components/Header.astro";
               src="/hermanos.webp"
               alt="Hermanos de Burkina Faso sonriendo"
               class="rounded-xl shadow-lg w-full h-40 object-cover"
+              loading="lazy"
             />
             <img
               src="/ninos-en-la-escuela2.webp"
               alt="Niños en una escuela de Burkina Faso"
               class="rounded-xl shadow-lg w-full h-40 object-cover mt-8"
+              loading="lazy"
             />
           </div>
         </div>
@@ -454,8 +454,8 @@ import Header from "../components/Header.astro";
     </section>
 
     <!-- Colaborar Section -->
-    <section id="colaborar" class="py-24 px-4 scroll-mt-24" data-aos="fade-up">
-      <div class="max-w-5xl mx-auto">
+    <section id="colaborar" class="py-24 px-4 scroll-mt-24">
+      <div class="max-w-5xl mx-auto" data-aos="zoom-in">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-burkindi-taupe mb-4">
             Súmate al Cambio
@@ -474,20 +474,68 @@ import Header from "../components/Header.astro";
               Información de Contacto
             </h3>
             <div class="space-y-4 text-lg text-burkindi-taupe/80">
-              <a href="mailto:burkindiuy@gmail.com" class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <a
+                href="mailto:burkindiuy@gmail.com"
+                class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path></svg
+                >
                 <span>burkindiuy@gmail.com</span>
               </a>
-              <a href="tel:+59899986123" class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <a
+                href="tel:+59899986123"
+                class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path></svg
+                >
                 <span>099 986 123</span>
               </a>
-              <a href="https://www.facebook.com/padrinosinternacionales" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"></path></svg>
+              <a
+                href="https://www.facebook.com/padrinosinternacionales"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                  ><path
+                    d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"
+                  ></path></svg
+                >
                 <span>Facebook</span>
               </a>
-              <a href="https://www.instagram.com/padrinosinternacionales/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+              <a
+                href="https://www.instagram.com/padrinosinternacionales/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3 hover:text-burkindi-red transition-colors transform hover:-translate-y-0.5"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                  ><path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  ></path></svg
+                >
                 <span>Instagram</span>
               </a>
             </div>
@@ -506,11 +554,7 @@ import Header from "../components/Header.astro";
           <div
             class="flex justify-center md:justify-start items-center gap-3 mb-4"
           >
-            <img
-              src="/burkindi.png"
-              alt="Logo Burkindi"
-              class="w-14 h-14"
-            />
+            <img src="/burkindi.png" alt="Logo Burkindi" class="w-14 h-14" />
             <span class="text-2xl font-bold text-white">BURKINDI</span>
           </div>
           <p class="text-white/70 leading-relaxed">
