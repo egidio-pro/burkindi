@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Core brand colors */
+  --color-burkindi-beige: #FAF8F5;
+  --color-burkindi-taupe: #2C2420;
+  --color-burkindi-taupe-light: #5C5450;
+  --color-burkindi-muted-blue: #4A7C94;
+  --color-burkindi-muted-green: #5A7A5A;
+  --color-burkindi-red: #B22222;
+  --color-burkindi-red-dark: #8B1A1A;
+  --color-burkindi-yellow: #DAA520;
+  --color-burkindi-yellow-light: #E8C547;
+
+  /* Custom animations */
+  --animate-blob: blob 12s infinite;
+  --animate-fade-in: fadeIn 0.5s ease-out;
+
+  /* Keyframes */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(20px, -30px) scale(1.05);
+    }
+    66% {
+      transform: translate(-15px, 15px) scale(0.95);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

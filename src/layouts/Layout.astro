@@ -1,59 +1,73 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/isotipo burkindi.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Organización BURKINDI</title>
-		<meta name="description" content="Educación que libera. ONG dedicada a promover el acceso a la educación en Burkina Faso." />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<title>Burkindi ONG: Educación y Futuro en Burkina Faso</title>
+		<meta
+			name="description"
+			content="Somos una ONG dedicada a transformar vidas en Burkina Faso a través de la educación. Apadrina un niño, apoya nuestros proyectos y únete al cambio."
+		/>
+		<meta 
+			name="keywords" 
+			content="ONG, Burkina Faso, educación, apadrinar, desarrollo, ayuda humanitaria, proyectos sociales, África" 
+		/>
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "NGO",
+			  "name": "Burkindi ONG",
+			  "url": "https://burkindi.org",
+			  "logo": "https://burkindi.org/burkindi.png",
+			  "description": "Somos una ONG dedicada a transformar vidas en Burkina Faso a través de la educación. Apadrina un niño, apoya nuestros proyectos y únete al cambio.",
+			  "address": {
+				"@type": "PostalAddress",
+				"addressCountry": "UY"
+			  },
+			  "contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+598-99-986-123",
+				"contactType": "Customer Service"
+			  }
+			}
+		</script>
+		<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			rel="stylesheet"
+		/>
 	</head>
-	<body class="bg-burkindi-beige text-burkindi-taupe font-sans">
+	<body
+		class="bg-burkindi-beige text-burkindi-taupe font-sans relative overflow-x-hidden selection:bg-burkindi-red selection:text-white"
+	>
+		<!-- Background decorative blobs for glassmorphism effect (subtle) -->
+		<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+			<div
+				class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-burkindi-muted-blue/10 rounded-full blur-[150px] animate-blob"
+			>
+			</div>
+			<div
+				class="absolute top-[20%] right-[-10%] w-[35%] h-[35%] bg-burkindi-muted-green/10 rounded-full blur-[150px] animate-blob animation-delay-2000"
+			>
+			</div>
+			<div
+				class="absolute bottom-[-10%] left-[20%] w-[45%] h-[45%] bg-burkindi-yellow/8 rounded-full blur-[150px] animate-blob animation-delay-4000"
+			>
+			</div>
+		</div>
+
 		<slot />
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
+		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+		></script>
+		<script is:inline>
 			AOS.init({
 				duration: 800,
-				easing: 'ease-in-out',
+				easing: "ease-in-out",
 				once: true,
-			});
-		</script>
-		<script type="module">
-			import { Client, Databases } from 'https://cdn.jsdelivr.net/npm/appwrite@14.0.0/+esm';
-
-			const client = new Client();
-			client
-				.setEndpoint(import.meta.env.APPWRITE_ENDPOINT)
-				.setProject(import.meta.env.APPWRITE_PROJECT_ID);
-
-			const databases = new Databases(client);
-
-			document.getElementById('contact-form').addEventListener('submit', async (e) => {
-				e.preventDefault();
-				const formData = new FormData(e.target);
-				const data = {
-					name: formData.get('name'),
-					email: formData.get('email'),
-					message: formData.get('message'),
-				};
-
-				try {
-					await databases.createDocument(
-						import.meta.env.APPWRITE_DATABASE_ID,
-						import.meta.env.APPWRITE_COLLECTION_ID,
-						'unique()', // Auto-generate ID
-						data
-					);
-					alert('Mensaje enviado exitosamente!');
-					e.target.reset();
-				} catch (error) {
-					console.error(error);
-					alert('Error al enviar el mensaje. Inténtalo de nuevo.');
-				}
 			});
 		</script>
 	</body>

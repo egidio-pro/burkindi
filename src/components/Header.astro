@@ -1,0 +1,122 @@
+---
+---
+<header class="fixed top-0 w-full z-50 transition-all duration-300 bg-burkindi-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="#" class="flex items-center gap-2">
+          <img src="/burkindi.png" alt="Burkindi Logo" class="h-16 w-auto object-contain" />
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#quienes-somos" class="text-burkindi-taupe hover:text-burkindi-red font-medium transition-colors">Nosotros</a>
+        <a href="#padrinos" class="text-burkindi-taupe hover:text-burkindi-red font-medium transition-colors">Padrinos</a>
+        <a href="#proyectos" class="text-burkindi-taupe hover:text-burkindi-red font-medium transition-colors">Proyectos</a>
+        <a href="#contexto" class="text-burkindi-taupe hover:text-burkindi-red font-medium transition-colors">Contexto</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center">
+        <a href="#colaborar" class="bg-burkindi-red text-white px-8 py-3 rounded-full font-bold hover:bg-burkindi-yellow transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm uppercase tracking-wider">
+          Colaborar
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-btn" class="text-burkindi-taupe hover:text-burkindi-red focus:outline-none">
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <!-- 
+    FIX SAFARI: 
+    1. Added onclick="void(0)" to force event delegation on iOS.
+    2. Removed backdrop-blur to prevent rendering glitches.
+    3. Added touch-action: manipulation.
+  -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg" style="touch-action: manipulation;" onclick="void(0)">
+    <div class="px-4 pt-4 pb-6 space-y-2 text-center">
+      <!-- 
+        FIX HOVER TRAP: 
+        Replaced hover: classes with active: classes. 
+        On mobile, 'hover' can require a double tap (one to hover, one to click).
+        'active' gives immediate feedback when touched.
+      -->
+      <a href="#quienes-somos" class="block px-3 py-3 rounded-md text-base font-medium text-burkindi-taupe active:bg-burkindi-beige/50 active:text-burkindi-red transition-colors cursor-pointer tap-highlight-transparent">Nosotros</a>
+      <a href="#padrinos" class="block px-3 py-3 rounded-md text-base font-medium text-burkindi-taupe active:bg-burkindi-beige/50 active:text-burkindi-red transition-colors cursor-pointer tap-highlight-transparent">Padrinos</a>
+      <a href="#proyectos" class="block px-3 py-3 rounded-md text-base font-medium text-burkindi-taupe active:bg-burkindi-beige/50 active:text-burkindi-red transition-colors cursor-pointer tap-highlight-transparent">Proyectos</a>
+      <a href="#contexto" class="block px-3 py-3 rounded-md text-base font-medium text-burkindi-taupe active:bg-burkindi-beige/50 active:text-burkindi-red transition-colors cursor-pointer tap-highlight-transparent">Contexto</a>
+      <a href="#colaborar" class="block px-3 py-4 mt-6 rounded-full text-base font-bold bg-burkindi-red text-white active:bg-burkindi-yellow uppercase tracking-wider mx-4 shadow-md cursor-pointer tap-highlight-transparent">Colaborar</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Utilidad para eliminar el resaltado azul en móviles al tocar */
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+</style>
+
+<script>
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (!btn || !menu) return;
+
+    // Función optimizada para cerrar el menú
+    const closeMenu = () => {
+      // Usamos requestAnimationFrame para asegurar que el cambio visual 
+      // no compita con la navegación, evitando el "jank"
+      requestAnimationFrame(() => {
+        menu.classList.add('hidden');
+      });
+    };
+
+    // Toggle del menú
+    const toggleMenu = (e: Event) => {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+    };
+
+    btn.addEventListener('click', toggleMenu);
+
+    // Delegación de eventos: Un solo listener para todo el menú
+    // Esto es mucho más eficiente que poner un listener en cada enlace
+    menu.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a');
+
+      if (link) {
+        // Si es un clic en un enlace, cerramos el menú inmediatamente
+        // No prevenimos el default, dejamos que el CSS scroll-behavior haga su magia
+        closeMenu();
+      }
+    });
+
+    // Cerrar al hacer clic fuera (optimizada)
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (!menu.classList.contains('hidden') && !menu.contains(target) && !btn.contains(target)) {
+        closeMenu();
+      }
+    }, { passive: true }); // passive: true mejora el rendimiento del scroll
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+</script>
